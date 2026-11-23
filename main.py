@@ -1,12 +1,12 @@
 import json as j,urllib.request as u
 from os import environ
-U=environ["MAKEFUN_ENV_URL"]
+U=environ["MAKEFUN_ENV_URL"].strip("/")
 Y=[0,100,320,330,500,900,0]
 KN=[33,31,18,14,-14,-18,-31,-33]
 BD=[15,17,-15,-17]
 RD=[1,-1,16,-16]
 KI=BD+RD
-L=30000;W=10**6
+L=100000;W=10**6
 o=lambda a:0<=a<128 and not a&136
 def A(q,y):
  if any((o(a:=q+32*y-16+s) and B[a]==1+(y<<3)) for s in(-1,1)):return 1
